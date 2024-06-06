@@ -2,7 +2,7 @@ import pandas as pd
 import torch 
 
 class ZINCDataset(torch.utils.data.Dataset):
-    def __init__(self, tokenizer, data, max_length=256):
+    def __init__(self, tokenizer, data, max_length=256, train_size=0.9):
         self.tokenizer = tokenizer
         self.data = data
         self.max_length = max_length
@@ -12,8 +12,7 @@ class ZINCDataset(torch.utils.data.Dataset):
     
     def __getitem__(self, idx):
         smiles = self.data[idx]
-        inputs = self.tokenizer(smiles, return_tensors='pt', max_length=self.max_length, 
-                                padding='max_length', truncation=True)
+        inputs = self.tokenizer(smiles, return_tensors='pt', max_length=self.max_length, padding='max_length', truncation=True)
         return inputs.input_ids.squeeze(), inputs.attention_mask.squeeze()
     
 
@@ -27,8 +26,8 @@ def load_ZINCdataset(tokenizer, path_to_dataset, batch_size, train=True):
       data.append(new_mol)
       
   start, end = 0, len(data)
-  if train: end = int(len(data) * 0.9)
-  else: start = int(len(data) * 0.9)
+  if train: end = int(len(data) * train_size)
+  else: start = int(len(data) * train_size)
       
   dataset = ZINCDataset(tokenizer, data[start:end])
   dataloader = torch.utils.data.DataLoader(dataset, batch_size=batch_size, shuffle=train)

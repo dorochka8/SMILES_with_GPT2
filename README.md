@@ -50,7 +50,7 @@ prompt       | length |temperature|valid, %|temperature|valid, %|temperature|val
 | O=c1n(CCO)c2ccccc2n1CC |   22   |   1.1     |    0   |   1.2     |    0   |   1.3     |    0   |   1.4     | 0.03125|   1.5     |    0   |   1.6     | 0.03125|
 
 Generated examples: \
-![lalala](https://github.com/dorochka8/SMILESwithGPT2/assets/97133490/074321d7-0d75-4782-8dc0-6080d23e5edf)
+![generated_examples](https://github.com/dorochka8/SMILESwithGPT2/assets/97133490/074321d7-0d75-4782-8dc0-6080d23e5edf)
 
 
 Training loss on 5 epochs: \

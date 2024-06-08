@@ -39,3 +39,6 @@ lossess = []
 for i in total_loss:
     for j in i:
         lossess.append(j)
+
+plt.plot(losses)
+plt.show()

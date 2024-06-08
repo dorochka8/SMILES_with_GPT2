@@ -32,25 +32,29 @@ Generated examples: \
 `CCN(CC)C(=O)C THE G G H the`\
 `C[C@@H](NC(=O)COC F F 39 39 39 39 39 39`\
 `O=c1n(CCO)c2ccccc2n1CC Windows -- -- --` \
-`'CCN(CC)C(=O)C May`
-
+`CCN(CC)C(=O)C May`
 
 
 ## Fine-tuned GPT2Head model results
 The model trained last two layers (1536 params.) on ZINC250 dataset for 5 epochs with `torch.optim.Adam(lr=3e-4)` on batch 64.
 
-<!---|           prompt       | length |temperature|valid, %|temperature|valid, %|temperature|valid, %|temperature|valid, %|temperature|valid, %|temperature|valid, %|
+prompt       | length |temperature|valid, %|temperature|valid, %|temperature|valid, %|temperature|valid, %|temperature|valid, %|temperature|valid, %|
 |:----------------------:|:------:|:---------:|:------:|:---------:|:------:|:---------:|:------:|:---------:|:------:|:---------:|:------:|:---------:|:------:|
-|         C              |    1   |   1.1     |  no\ch |   1.2     |  no\ch |   1.3     |  no\ch |   1.4     |  no\ch |   1.5     |  no\ch |   1.6     |  no\ch |
-|         CC             |    2   |   1.1     |  no\ch |   1.2     |  no\ch |   1.3     |  no\ch |   1.4     |  no\ch |   1.5     |  no\ch |   1.6     |  no\ch |
-|        CCO             |    3   |   1.1     |  no\ch |   1.2     |  no\ch |   1.3     |  no\ch |   1.4     |  no\ch |   1.5     |  no\ch |   1.6     |  no\ch |
-|      CCOC(=O)          |    8   |   1.1     |    0   |   1.2     |    0   |   1.3     |    0   |   1.4     |  no\ch |   1.5     |  no\ch |   1.6     |  no\ch |
-|     CCCCC(=O)NC        |   11   |   1.1     |  no\ch |   1.2     |  no\ch |   1.3     |  no\ch |   1.4     |  no\ch |   1.5     |  no\ch |   1.6     |  no\ch |
-|    CCN(CC)C(=O)C       |   13   |   1.1     |    0   |   1.2     |    0   |   1.3     |  no\ch |   1.4     |  no\ch |   1.5     |  no\ch |   1.6     |  no\ch |
-|   C[C@@H](NC(=O)COC    |   17   |   1.1     |    0   |   1.2     |    0   |   1.3     |  no\ch |   1.4     |  no\ch |   1.5     |  no\ch |   1.6     |  no\ch |
-| O=c1n(CCO)c2ccccc2n1CC |   22   |   1.1     |    0   |   1.2     |    0   |   1.3     |  no\ch |   1.4     |  no\ch |   1.5     |  no\ch |   1.6     |  no\ch | -->
+|         C              |    1   |   1.1     |  no\ch |   1.2     |  0.125 |   1.3     | 0.03125|   1.4     |    0   |   1.5     | 0.09375|   1.6     | 0.03125|
+|         CC             |    2   |   1.1     | 0.03125|   1.2     | 0.03125|   1.3     |  0.125 |   1.4     | 0.03125|   1.5     |  0.0625|   1.6     | 0.09375|
+|        CCO             |    3   |   1.1     | 0.1875 |   1.2     |  0.25  |   1.3     |  0.1875|   1.4     |  0.125 |   1.5     |  0.125 |   1.6     |  0.0625|
+|      CCOC(=O)          |    8   |   1.1     |  no\ch |   1.2     | 0.03125|   1.3     | 0.03125|   1.4     | 0.03125|   1.5     |    0   |   1.6     |  0.0625|
+|     CCCCC(=O)NC        |   11   |   1.1     | 0.125  |   1.2     | 0.09375|   1.3     | 0.03125|   1.4     |  0.0625|   1.5     | 0.03125|   1.6     |  0.0625|
+|    CCN(CC)C(=O)C       |   13   |   1.1     | 0.125  |   1.2     | 0.15625|   1.3     | 0.03125|   1.4     | 0.03125|   1.5     |  0.0625|   1.6     |  0.0625|
+|   C[C@@H](NC(=O)COC    |   17   |   1.1     |    0   |   1.2     |  0.0625|   1.3     |    0   |   1.4     |    0   |   1.5     | 0.03125|   1.6     |    0   |
+| O=c1n(CCO)c2ccccc2n1CC |   22   |   1.1     |    0   |   1.2     |    0   |   1.3     |    0   |   1.4     | 0.03125|   1.5     |    0   |   1.6     | 0.03125|
+
+Generated examples: \
+![lalala](https://github.com/dorochka8/SMILESwithGPT2/assets/97133490/074321d7-0d75-4782-8dc0-6080d23e5edf)
 
 
+Training loss on 5 epochs: \
+![fine_tuned_model_loss](https://github.com/dorochka8/SMILESwithGPT2/assets/97133490/a3639afe-6d91-402a-86e4-514cbc55517a)
 
 ## Usage
 To use this repository, follow these steps:
